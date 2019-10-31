@@ -1,5 +1,4 @@
-import population
-import fitness
+import population, fitness, selection
 
 mutationRate = 0.1
 crossoverRate = 0.7
@@ -14,4 +13,6 @@ print("\n### POPULATION FITNESS ###")
 currentPopulation = fitness.calculatePopulationFitness(currentPopulation, size)
 print()
 print(currentPopulation)
-# print(population.createPopulation(10))
+
+print()
+selection.rouletteSelection(currentPopulation, size)

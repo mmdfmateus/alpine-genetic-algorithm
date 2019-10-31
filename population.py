@@ -7,4 +7,5 @@ def createPopulation(size):
     for i in range(size):
         population[i][0] = round(random.uniform(0, 10), 3)
         population[i][1] = round(random.uniform(0, 10), 3)
+    # print(population)
     return population
