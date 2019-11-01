@@ -1,15 +1,38 @@
-import fitness
-
-## geral num aleatŕop para ver se vai cruzar
+import fitness, random
 
 # alpha = número aleatório entre 0 e 1, diferente pra cada casal
-children = [[7.917, 7.917], [1, 1]]
-fitnessVec = []
-for child in children:
-    value = fitness.calculateFitness([child[0], child[1]])
-    fitnessVec.append(value)
-    
-print (fitnessVec)
+
+def makeCrossover(father1, father2):
+      son1 = [0 for x in range(4)]
+      son2 = [0 for x in range(4)]
+
+      alpha = round(random.uniform(0, 1), 1)
+
+      son1[0] = round((alpha * father1[0]) + ((1 - alpha) * father2[0]), 3)
+      son1[1] = round((alpha * father1[1]) + ((1 - alpha) * father2[1]), 3)
+
+      son2[0] = round((alpha * father2[0]) + ((1 - alpha) * father1[0]), 3)
+      son2[1] = round((alpha * father2[1]) + ((1 - alpha) * father1[1]), 3)
+
+      return son1, son2
+
+
+def crossover(fathers, size, rate):
+      i = 0
+      while(i < size):
+            rand = round(random.uniform(0, 1), 1)
+            j = i + 1
+            print("i: " + str(i) + "  j: " + str(j) + "\trand: " + str(rand))
+            if(j >= size):
+                  break
+            if(rand < rate):
+                  print("\tfathers  " + str(fathers[i]) + "  and  " + str(fathers[j]))
+                  fathers[i], fathers[j] = makeCrossover(fathers[i], fathers[j])
+                  print("\tsons     " + str(fathers[i]) + "  and  " + str(fathers[j]))
+            i = j + 1
+      return fathers
+
+
 
 
 # faz a roleta pra pegar quais os genes que vao cruzar;

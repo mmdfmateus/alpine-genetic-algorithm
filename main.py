@@ -1,4 +1,4 @@
-import population, fitness, selection
+import population, fitness, selection, crossover, mutation
 
 mutationRate = 0.1
 crossoverRate = 0.7
@@ -15,4 +15,15 @@ print()
 print(currentPopulation)
 
 print()
-selection.rouletteSelection(currentPopulation, size)
+fathers = selection.rouletteSelection(currentPopulation, size)
+
+print()
+
+currentPopulation = crossover.crossover(fathers, size, crossoverRate)
+print("\n### POPULATION AFTER CROSSOVER ###")
+print(currentPopulation)
+
+print()
+currentPopulation = mutation.mutate(currentPopulation, size, mutationRate)
+print("\n### POPULATION AFTER MUTATION ###")
+print(currentPopulation)

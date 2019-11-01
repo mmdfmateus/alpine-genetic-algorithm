@@ -7,6 +7,7 @@ def calculateFitness(xVec):
         prod *= math.sqrt(x)*math.sin(x)
 
     prod += 10  # adding 10 so fitness will never be a negative value
+    prod = round(prod, 3)
     return prod
 
 def calculatePopulationFitness(population, size):
