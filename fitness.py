@@ -6,7 +6,7 @@ def calculateFitness(xVec):
     for x in xVec:
         prod *= math.sqrt(x)*math.sin(x)
 
-    prod += 10  # adding 10 so fitness will never be a negative value
+    prod += 15  # adding 10 so fitness will never be a negative value
     prod = round(prod, 3)
     return prod
 
