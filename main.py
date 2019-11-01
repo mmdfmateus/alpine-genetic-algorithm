@@ -27,3 +27,4 @@ print()
 currentPopulation = mutation.mutate(currentPopulation, size, mutationRate)
 print("\n### POPULATION AFTER MUTATION ###")
 print(currentPopulation)
+
