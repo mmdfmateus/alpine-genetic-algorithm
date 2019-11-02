@@ -7,13 +7,12 @@ def makeCrossover(father1, father2):
       son2 = [0 for x in range(4)]
 
       alpha = round(random.uniform(0, 1), 1)
-
       son1[0] = round((alpha * father1[0]) + ((1 - alpha) * father2[0]), 3)
       son1[1] = round((alpha * father1[1]) + ((1 - alpha) * father2[1]), 3)
 
       son2[0] = round((alpha * father2[0]) + ((1 - alpha) * father1[0]), 3)
       son2[1] = round((alpha * father2[1]) + ((1 - alpha) * father1[1]), 3)
-
+      
       return son1, son2
 
 
