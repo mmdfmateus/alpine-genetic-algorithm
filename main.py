@@ -1,6 +1,6 @@
 import population, fitness, selection, crossover, mutation, maxmin
 
-mutationRate = 0.2
+mutationRate = 0.02
 crossoverRate = 0.7
 
 
@@ -15,7 +15,7 @@ currentPopulation = population.createPopulation(size)
 # print(currentPopulation)
 # print()
 
-for i in range(100):
+for i in range(200):
     # input()
     # print("\n### POPULATION FITNESS ###")
     currentPopulation = fitness.calculatePopulationFitness(currentPopulation, size)
