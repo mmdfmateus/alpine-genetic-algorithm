@@ -7,7 +7,7 @@ def makeCrossover(father1, father2):
       son2 = [0 for x in range(4)]
 
       alpha = round(random.uniform(0, 1), 1)
-      print("alfa: " + str(alpha))
+      # print("alfa: " + str(alpha))
       son1[0] = round((alpha * father1[0]) + ((1 - alpha) * father2[0]), 4)
       son1[1] = round((alpha * father1[1]) + ((1 - alpha) * father2[1]), 4)
 
@@ -22,13 +22,13 @@ def crossover(fathers, size, rate):
       while(i < size):
             rand = round(random.uniform(0, 1), 4)
             j = i + 1
-            print("i: " + str(i) + "  j: " + str(j) + "\trand: " + str(rand))
+            # print("i: " + str(i) + "  j: " + str(j) + "\trand: " + str(rand))
             if(j >= size):
                   break
             if(rand < rate):
-                  print("\tfathers  " + str(fathers[i]) + "  and  " + str(fathers[j]))
+                  # print("\tfathers  " + str(fathers[i]) + "  and  " + str(fathers[j]))
                   fathers[i], fathers[j] = makeCrossover(fathers[i], fathers[j])
-                  print("\tsons     " + str(fathers[i]) + "  and  " + str(fathers[j]))
+                  # print("\tsons     " + str(fathers[i]) + "  and  " + str(fathers[j]))
             i = j + 1
       return fathers
 

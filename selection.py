@@ -2,11 +2,11 @@ import random, population
 
 def rouletteSelection(population, size):
       randomNumbers = getRandomNumbers(population, size)
-      print("\n\n### RANDOM NUMBERS ###")
-      print(randomNumbers)
+      # print("\n\n### RANDOM NUMBERS ###")
+      # print(randomNumbers)
       selectedFathers = getSelectedFathers(population, randomNumbers, size)
-      print("\n\n### SELECTED FATHERS ###")
-      print(selectedFathers)
+      # print("\n\n### SELECTED FATHERS ###")
+      # print(selectedFathers)
       return selectedFathers
 
 def getRandomNumbers(population, size):
