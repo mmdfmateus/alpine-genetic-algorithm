@@ -2,12 +2,7 @@ import math
 
 
 def calculateFitness(xVec):
-    prod = 1
-    for x in xVec:
-        prod *= math.sqrt(x)*math.sin(x)
-    prod += 7  # adding 7 so fitness will never be a negative value
-    prod = round(prod, 4)
-    return prod
+    return 0.0001 * (abs(math.sin(xVec[0]) * math.sin(xVec[1]) * math.exp(abs(100-((math.sqrt(xVec[0]**2 + xVec[1]**2) ) / math.pi ) ) ) ) + 1 )**0.1
 
 
 def calculatePopulationFitness(population, size):

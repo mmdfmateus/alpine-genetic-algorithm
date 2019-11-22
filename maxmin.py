@@ -2,18 +2,22 @@
 
 def calculateMax(vec):
     max = vec[0][2]
-    for v in vec:
+    maxIndex = 0
+    for index, v in enumerate(vec):
         if (v[2] > max):
             max = v[2]
-    return max
+            maxIndex = index
+    return maxIndex
 
 
 def calculateMin(vec):
     min = vec[0][2]
-    for v in vec:
+    minIndex = 0
+    for index, v in enumerate(vec):
         if (v[2] < min):
             min = v[2]
-    return min
+            minIndex = index
+    return minIndex
 
 def calculateMed(vec, size):
     return (vec[size-1][3])/size
